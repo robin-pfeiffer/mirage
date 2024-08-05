@@ -1,5 +1,3 @@
-# shellcheck shell=sh
-
 # Settings
 
 MIRAGE_SHOW_SUDO=${MIRAGE_SHOW_SUDO:-true}

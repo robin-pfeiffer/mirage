@@ -14,19 +14,15 @@ A simple shell theme
 
 Clone this repository to your desired location with `git clone --depth=1 https://github.com/robin-pfeiffer/mirage.git ~/Projects/github/robin-pfeiffer/mirage`.
 
-Depending on your shell, source `mirage.sh`, from the location you cloned the repository into, in your `.*rc` file (e.g. `.bashrc`, `.zshrc`) and execute the `_mirage` function to alter `PS1`:
+Depending on your shell, source `mirage.bash`, from the location you cloned the repository into, in your `.bashrc` file and execute the `_mirage` function to alter `PS1`:
 
 ```sh
 # .bashrc
-source "$HOME/Projects/robin-pfeiffer/mirage/mirage.sh"
+source "$HOME/Projects/github/robin-pfeiffer/mirage/mirage.sh"
 PROMPT_COMMAND=_mirage
-
-# .zshrc
-source "$HOME/Projects/robin-pfeiffer/mirage/mirage.sh"
-precmd() { _mirage; }
 ```
 
-Apply the changes by sourcing your `.*rc` file.
+Apply the changes by sourcing your `.bashrc` file.
 
 ### Configuration
 
@@ -46,7 +42,7 @@ Add or remove segments from the prompt being used.
 
 ## Updating
 
-Pull the latest changes from this repository with `git pull --ff-only`, and source your shell's `.*rc` file to apply the changes.
+Pull the latest changes from this repository with `git pull --ff-only`, and source your shell's `.bashrc` file to apply the changes.
 
 ## Development
 
