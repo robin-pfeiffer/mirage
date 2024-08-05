@@ -12,9 +12,9 @@ A simple shell theme
 
 ## Installation
 
-Clone this repository to your desired location with `git clone --depth=1 https://github.com/robin-pfeiffer/mirage.git ~/Projects/github/robin-pfeiffer/mirage`.
+Clone this repository to your desired location with `git clone --depth=1 https://github.com/robin-pfeiffer/mirage.git` (in this example `~/Projects/github/robin-pfeiffer/mirage` was used).
 
-Depending on your shell, source `mirage.bash`, from the location you cloned the repository into, in your `.bashrc` file and execute the `_mirage` function to alter `PS1`:
+Source `mirage.bash`, from the location you cloned the repository into, in your `.bashrc` file and execute the `_mirage` function to alter `PS1`:
 
 ```sh
 # .bashrc
@@ -22,7 +22,7 @@ source "$HOME/Projects/github/robin-pfeiffer/mirage/mirage.sh"
 PROMPT_COMMAND=_mirage
 ```
 
-Apply the changes by sourcing your `.bashrc` file.
+Apply the changes by sourcing your `.bashrc` file or by restarting your current terminal.
 
 ### Configuration
 
