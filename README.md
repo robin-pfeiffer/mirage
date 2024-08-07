@@ -14,19 +14,33 @@ A simple shell theme
 
 Clone this repository to your desired location with `git clone --depth=1 https://github.com/robin-pfeiffer/mirage.git` (in this example `~/Projects/github/robin-pfeiffer/mirage` was used).
 
-Source `mirage.bash`, from the location you cloned the repository into, in your `.bashrc` file and execute the `_mirage` function to alter `PS1`:
+Source `use-mirage.*sh`, based on your shell (Bash, ZSH, etc.), from the location you cloned the repository into, in your shell's `.*rc` file to alter `PS1`:
 
 ```sh
 # .bashrc
-source "$HOME/Projects/github/robin-pfeiffer/mirage/mirage.sh"
-PROMPT_COMMAND=_mirage
+source "$HOME/Projects/github/robin-pfeiffer/mirage/use-mirage.bash"
+
+# .zshrc
+source "$HOME/Projects/github/robin-pfeiffer/mirage/use-mirage.zsh
 ```
 
-Apply the changes by sourcing your `.bashrc` file or by restarting your current terminal.
+Apply the changes by sourcing your `.*rc` file or by restarting your current terminal.
 
 ### Configuration
 
 Mirage provides basic configuration of certain features and prompt build-up.
+
+#### `MIRAGE_ESCAPE_CHARACTER_BEGIN`
+
+> String, default: `\[`
+
+Beginning escape character to use for colour blocks. Change this to `%{` for ZSH support with `export MIRAGE_ESCAPE_CHARACTER_BEGIN="%{`.
+
+#### `MIRAGE_ESCAPE_CHARACTER_END`
+
+> String, default: `%}`
+
+Ending escape character to use for colour blocks. Change this to `%}` for ZSH support with `export MIRAGE_ESCAPE_CHARACTER_END="%}`.
 
 #### `MIRAGE_SHOW_SUDO`
 
@@ -42,7 +56,7 @@ Add or remove segments from the prompt being used.
 
 ## Updating
 
-Pull the latest changes from this repository with `git pull --ff-only`, and source your shell's `.bashrc` file to apply the changes.
+Pull the latest changes from this repository with `git pull --ff-only`, and source your shell's `.*rc` file to apply the changes.
 
 ## Development
 

@@ -1,21 +1,31 @@
+# shellcheck shell=sh
+
+exit_code="$1"
+
 # Settings
 
+MIRAGE_ESCAPE_CHARACTER_BEGIN=${MIRAGE_ESCAPE_CHARACTER_BEGIN:-'\['}
+MIRAGE_ESCAPE_CHARACTER_END=${MIRAGE_ESCAPE_CHARACTER_END:-'\]'}
 MIRAGE_SHOW_SUDO=${MIRAGE_SHOW_SUDO:-true}
 
 MIRAGE_SEGMENTS=${MIRAGE_SEGMENTS:-"exit_code user host dir scm"}
 
 # Colour definitions
 
-black="\[\033[0;30m\]"
-red="\[\033[0;31m\]"
-green="\[\033[0;32m\]"
-yellow="\[\033[0;33m\]"
-blue="\[\033[0;34m\]"
-purple="\[\033[0;35m\]"
-cyan="\[\033[0;36m\]"
-white="\[\033[0;37m\]"
-normal="\[\033[0m\]"
-reset_color="\[\033[39m\]"
+_mirage_escape() {
+	printf "%b" "$MIRAGE_ESCAPE_CHARACTER_BEGIN$1$MIRAGE_ESCAPE_CHARACTER_END"
+}
+
+black=$(_mirage_escape "\033[0;30m")
+red=$(_mirage_escape "\033[0;31m")
+green=$(_mirage_escape "\033[0;32m")
+yellow=$(_mirage_escape "\033[0;33m")
+blue=$(_mirage_escape "\033[0;34m")
+purple=$(_mirage_escape "\033[0;35m")
+cyan=$(_mirage_escape "\033[0;36m")
+white=$(_mirage_escape "\033[0;37m")
+normal=$(_mirage_escape "\033[0m")
+reset_color=$(_mirage_escape "\033[39m")
 
 # Helper functions
 
@@ -85,6 +95,7 @@ _mirage_ps1() {
 }
 
 _mirage() {
-	exit_code="$?"
-	PS1="$(_mirage_ps1)"
+	_mirage_ps1	
 }
+
+_mirage
